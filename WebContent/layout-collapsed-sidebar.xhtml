@@ -2,9 +2,11 @@
           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-    <head>        
+
+    <head>
+        
         <!-- Title -->
-        <title>Modern | Mailbox - Inbox</title>
+        <title>Modern | Layouts - Collapsed Sidebar</title>
         
         <meta content="width=device-width, initial-scale=1" name="viewport"></meta>
         <meta charset="UTF-8"></meta>
@@ -18,11 +20,11 @@
         <link href="assets/plugins/uniform/css/uniform.default.min.css" rel="stylesheet"></link>
         <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
         <link href="assets/plugins/fontawesome/css/font-awesome.css" rel="stylesheet" type="text/css"></link>
-        <link href="assets/plugins/line-icons/simple-line-icons.css" rel="stylesheet" type="text/css"></link>
+        <link href="assets/plugins/line-icons/simple-line-icons.css" rel="stylesheet" type="text/css"></link>	
         <link href="assets/plugins/offcanvasmenueffects/css/menu_cornerbox.css" rel="stylesheet" type="text/css"></link>	
         <link href="assets/plugins/waves/waves.min.css" rel="stylesheet" type="text/css"></link>
         <link href="assets/plugins/switchery/switchery.min.css" rel="stylesheet" type="text/css"></link>
-        <link href="assets/plugins/3d-bold-navigation/css/style.css" rel="stylesheet" type="text/css"></link>
+        <link href="assets/plugins/3d-bold-navigation/css/style.css" rel="stylesheet" type="text/css"></link>	
         <link href="assets/plugins/slidepushmenus/css/component.css" rel="stylesheet" type="text/css"></link>
         
         <!-- Theme Styles -->
@@ -41,7 +43,7 @@
         <![endif]-->
         
     </head>
-    <body class="page-header-fixed page-sidebar-fixed compact-menu">
+    <body class="page-header-fixed small-sidebar">
         <div class="overlay"></div>
         <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s1">
             <h3><span class="pull-left">Chat</span><a href="javascript:void(0);" class="pull-right" id="closeRight"><i class="fa fa-times"></i></a></h3>
@@ -107,7 +109,7 @@
 		</nav>
         <div class="menu-wrap">
             <nav class="profile-menu">
-                <div class="profile"><img src="assets/images/profile-menu-image.png" width="60" alt="David Green"></img><span>David Green</span></div>
+                <div class="profile"><img src="assets/images/profile-menu-image.png" width="60" alt="David Green"/><span>David Green</span></div>
                 <div class="profile-menu-list">
                     <a href="#"><i class="fa fa-star"></i><span>Favorites</span></a>
                     <a href="#"><i class="fa fa-bell"></i><span>Alerts</span></a>
@@ -368,475 +370,142 @@
                         </div>
                     </div>
                     <ul class="menu accordion-menu">
-                        <li><a href="compose-alt.xhtml"><span class="fa fa-pencil menu-icon"></span><p>Compose</p></a></li>
-                        <li class="active"><a href="inbox-alt.xhtml"><span class="fa fa-inbox menu-icon"></span><p>Inbox</p> <span class="badge badge-success pull-right">4</span></a></li>
-                        <li><a href="#"><span class="fa fa-sign-out menu-icon"></span><p>Sent</p></a></li>
-                        <li><a href="#"><span class="fa fa-file-text-o menu-icon"></span><p>Draft</p></a></li>
-                        <li><a href="#"><span class="fa fa-exclamation-circle menu-icon"></span><p>Spam</p></a></li>
-                        <li><a href="#"><span class="fa fa-trash menu-icon"></span><p>Trash</p></a></li>
+                        
+                        <li><a href="index.xhtml" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-home"></span><p>Dashboard</p></a></li>
+                        <li><a href="profile.xhtml" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-user"></span><p>Profile</p></a></li>
+                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-envelope"></span><p>Mailbox</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="inbox.xhtml">Inbox</a></li>
+                                <li><a href="inbox-alt.xhtml">Inbox Alt</a></li>
+                                <li><a href="message-view.xhtml">View Message</a></li>
+                                <li><a href="message-view-alt.xhtml">View Message Alt</a></li>
+                                <li><a href="compose.xhtml">Compose</a></li>
+                                <li><a href="compose-alt.xhtml">Compose Alt</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-briefcase"></span><p>UI Kits</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="ui-alerts.xhtml">Alerts</a></li>
+                                <li><a href="ui-buttons.xhtml">Buttons</a></li>
+                                <li><a href="ui-icons.xhtml">Icons</a></li>
+                                <li><a href="ui-typography.xhtml">Typography</a></li>
+                                <li><a href="ui-notifications.xhtml">Notifications</a></li>
+                                <li><a href="ui-grid.xhtml">Grid</a></li>
+                                <li><a href="ui-tabs-accordions.xhtml">Tabs &amp; Accordions</a></li>
+                                <li><a href="ui-modals.xhtml">Modals</a></li>
+                                <li><a href="ui-panels.xhtml">Panels</a></li>
+                                <li><a href="ui-progress.xhtml">Progress Bars</a></li>
+                                <li><a href="ui-sliders.xhtml">Sliders</a></li>
+                                <li><a href="ui-nestable.xhtml">Nestable</a></li>
+                                <li><a href="ui-tree-view.xhtml">Tree View</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink active open"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-th"></span><p>Layouts</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="layout-blank.xhtml">Blank Page</a></li>
+                                <li><a href="layout-boxed.xhtml">Boxed Page</a></li>
+                                <li><a href="layout-horizontal-menu.xhtml">Horizontal Menu</a></li>
+                                <li><a href="layout-horizontal-menu-boxed.xhtml">Boxed &amp; Horizontal Menu</a></li>
+                                <li><a href="layout-horizontal-menu-minimal.xhtml">Horizontal Menu Minimal</a></li>
+                                <li><a href="layout-fixed-sidebar.xhtml">Fixed Sidebar</a></li>
+                                <li><a href="layout-static-header.xhtml">Static Header</a></li>
+                                <li class="active"><a href="layout-collapsed-sidebar.xhtml">Collapsed Sidebar</a></li>
+                                <li><a href="layout-compact-menu.xhtml">Compact Menu</a></li>
+                                <li><a href="layout-hover-menu.xhtml">Hover Menu</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-list"></span><p>Tables</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="table-static.xhtml">Static Tables</a></li>
+                                <li><a href="table-responsive.xhtml">Responsive Tables</a></li>
+                                <li><a href="table-data.xhtml">Data Tables</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-edit"></span><p>Forms</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="form-elements.xhtml">Form Elements</a></li>
+                                <li><a href="form-wizard.xhtml">Form Wizard</a></li>
+                                <li><a href="form-upload.xhtml">File Upload</a></li>
+                                <li><a href="form-image-crop.xhtml">Image Crop</a></li>
+                                <li><a href="form-image-zoom.xhtml">Image Zoom</a></li>
+                                <li><a href="form-select2.xhtml">Select2</a></li>
+                                <li><a href="form-x-editable.xhtml">X-editable</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-stats"></span><p>Charts</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="charts-sparkline.xhtml">Sparkline</a></li>
+                                <li><a href="charts-rickshaw.xhtml">Rickshaw</a></li>
+                                <li><a href="charts-morris.xhtml">Morris</a></li>
+                                <li><a href="charts-flotchart.xhtml">Flotchart</a></li>
+                                <li><a href="charts-chartjs.xhtml">Chart.js</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-log-in"></span><p>Login</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="login.xhtml">Login Form</a></li>
+                                <li><a href="login-alt.xhtml">Login Alt</a></li>
+                                <li><a href="register.xhtml">Register Form</a></li>
+                                <li><a href="register-alt.xhtml">Register Alt</a></li>
+                                <li><a href="forgot.xhtml">Forgot Password</a></li>
+                                <li><a href="lock-screen.xhtml">Lock Screen</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-map-marker"></span><p>Maps</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="maps-google.xhtml">Google Maps</a></li>
+                                <li><a href="maps-vector.xhtml">Vector Maps</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-gift"></span><p>Extra</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="404.xhtml">404 Page</a></li>
+                                <li><a href="500.xhtml">500 Page</a></li>
+                                <li><a href="invoice.xhtml">Invoice</a></li>
+                                <li><a href="calendar.xhtml">Calendar</a></li>
+                                <li><a href="faq.xhtml">FAQ</a></li>
+                                <li><a href="todo.xhtml">Todo</a></li>
+                                <li><a href="pricing-tables.xhtml">Pricing Tables</a></li>
+                                <li><a href="shop.xhtml">Shop</a></li>
+                                <li><a href="gallery.xhtml">Gallery</a></li>
+                                <li><a href="timeline.xhtml">Timeline</a></li>
+                                <li><a href="search.xhtml">Search Results</a></li>
+                                <li><a href="coming-soon.xhtml">Coming Soon</a></li>
+                                <li><a href="contact.xhtml">Contact</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-flash"></span><p>Levels</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li class="droplink"><a href="#"><p>Level 1.1</p><span class="arrow"></span></a>
+                                    <ul class="sub-menu">
+                                        <li class="droplink"><a href="#"><p>Level 2.1</p><span class="arrow"></span></a>
+                                            <ul class="sub-menu">
+                                                <li><a href="#">Level 3.1</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Level 2.2</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Level 1.2</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div><!-- Page Sidebar Inner -->
             </div><!-- Page Sidebar -->
             <div class="page-inner">
+                <div class="page-title">
+                    <h3>Collapsed Sidebar</h3>
+                    <div class="page-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li><a href="index.xhtml">Home</a></li>
+                            <li><a href="#">Layouts</a></li>
+                            <li class="active">Collapsed Sidebar</li>
+                        </ol>
+                    </div>
+                </div>
                 <div id="main-wrapper">
-                    <div class="row m-t-md">
-                        <div class="col-md-12">
-                            <div class="row mailbox-header">
-                                <div class="col-md-8">
-                                    <h2>Inbox</h2>
-                                </div>
-                                <div class="col-md-4">
-                                    <form action="#" method="get">
-                                        <div class="input-group">
-                                            <input type="text" name="search" class="form-control input-search" placeholder="Search..."></input>
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-success" type="button"><i class="fa fa-search"></i></button>
-                                            </span>
-                                        </div><!-- Input Group -->
-                                    </form>
-                               </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="mailbox-content">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th colspan="1" class="hidden-xs">
-                                            <span><input type="checkbox" class="check-mail-all"></input></span>
-                                        </th>
-                                        <th class="text-right" colspan="5">
-                                            <span class="text-muted m-r-sm">Showing 20 of 346 </span>
-                                            <a class="btn btn-default m-r-sm" data-toggle="tooltip" data-placement="top" title="Refresh"><i class="fa fa-refresh"></i></a>
-                                            <div class="btn-group m-r-sm mail-hidden-options">
-                                                <a class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
-                                                <a class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Report Spam"><i class="fa fa-exclamation-circle"></i></a>
-                                                <a class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Mark as Important"><i class="fa fa-star"></i></a>
-                                                <a class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Mark as Read"><i class="fa fa-pencil"></i></a>
-                                            </div>
-                                            <div class="btn-group m-r-sm mail-hidden-options">
-                                                <div class="btn-group">
-                                                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-folder"></i> <span class="caret"></span></a>
-                                                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                                        <li><a href="#">Social</a></li>
-                                                        <li><a href="#">Forums</a></li>
-                                                        <li><a href="#">Updates</a></li>
-                                                        <li class="divider"></li>
-                                                        <li><a href="#">Spam</a></li>
-                                                        <li><a href="#">Trash</a></li>
-                                                        <li class="divider"></li>
-                                                        <li><a href="#">New</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="btn-group">
-                                                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tags"></i> <span class="caret"></span></a>
-                                                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                                        <li><a href="#">Work</a></li>
-                                                        <li><a href="#">Family</a></li>
-                                                        <li><a href="#">Social</a></li>
-                                                        <li class="divider"></li>
-                                                        <li><a href="#">Primary</a></li>
-                                                        <li><a href="#">Promotions</a></li>
-                                                        <li><a href="#">Forums</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="btn-group">
-                                                <a class="btn btn-default"><i class="fa fa-angle-left"></i></a>
-                                                <a class="btn btn-default"><i class="fa fa-angle-right"></i></a>
-                                            </div>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="unread">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star icon-state-warning"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Google
-                                        </td>
-                                        <td>
-                                            Nullam quis risus eget urna mollis ornare vel eu leo
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            21 march
-                                        </td>
-                                    </tr>
-                                    <tr class="unread">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star icon-state-warning"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Themeforest
-                                        </td>
-                                        <td>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            20 march
-                                        </td>
-                                    </tr>
-                                    <tr class="unread">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star icon-state-warning"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Adobe
-                                        </td>
-                                        <td>
-                                            Nullam quis risus eget urna mollis ornare vel eu leo
-                                        </td>
-                                        <td>
-                                            <i class="fa fa-paperclip"></i>
-                                        </td>
-                                        <td>
-                                            18 march
-                                        </td>
-                                    </tr>
-                                    <tr class="unread">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star icon-state-warning"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Apple
-                                        </td>
-                                        <td>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                        </td>
-                                        <td>
-                                            <i class="fa fa-paperclip"></i>
-                                        </td>
-                                        <td>
-                                            14 march
-                                        </td>
-                                    </tr>
-                                    <tr class="read">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Microsoft
-                                        </td>
-                                        <td>
-                                            Nullam quis risus eget urna mollis ornare vel eu leo
-                                        </td>
-                                        <td>
-                                            <i class="fa fa-paperclip"></i>
-                                        </td>
-                                        <td>
-                                            11 march
-                                        </td>
-                                    </tr>
-                                    <tr class="read">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Microsoft
-                                        </td>
-                                        <td>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            11 march
-                                        </td>
-                                    </tr>
-                                    <tr class="read">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Microsoft
-                                        </td>
-                                        <td>
-                                            Nullam quis risus eget urna mollis ornare vel eu leo
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            6 march
-                                        </td>
-                                    </tr>
-                                    <tr class="read">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Microsoft
-                                        </td>
-                                        <td>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            6 march
-                                        </td>
-                                    </tr>
-                                    <tr class="read">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star icon-state-warning"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Microsoft
-                                        </td>
-                                        <td>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            6 march
-                                        </td>
-                                    </tr>
-                                    <tr class="read">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star icon-state-warning"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Themeforest
-                                        </td>
-                                        <td>
-                                            Nullam quis risus eget urna mollis ornare vel eu leo
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            6 march
-                                        </td>
-                                    </tr>
-                                    <tr class="read">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Themeforest
-                                        </td>
-                                        <td>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            6 march
-                                        </td>
-                                    </tr>
-                                    <tr class="read">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Themeforest
-                                        </td>
-                                        <td>
-                                            Nullam quis risus eget urna mollis ornare vel eu leo
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            6 march
-                                        </td>
-                                    </tr>
-                                    <tr class="read">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Dropbox
-                                        </td>
-                                        <td>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            6 march
-                                        </td>
-                                    </tr>
-                                    <tr class="read">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Dropbox
-                                        </td>
-                                        <td>
-                                            Nullam quis risus eget urna mollis ornare vel eu leo
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            6 march
-                                        </td>
-                                    </tr>
-                                    <tr class="read">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Twitter
-                                        </td>
-                                        <td>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            6 march
-                                        </td>
-                                    </tr>
-                                    <tr class="read">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Twitter
-                                        </td>
-                                        <td>
-                                            Nullam quis risus eget urna mollis ornare vel eu leo
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            6 march
-                                        </td>
-                                    </tr>
-                                    <tr class="read">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star icon-state-warning"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Twitter
-                                        </td>
-                                        <td>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                        </td>
-                                        <td>
-                                            <i class="fa fa-paperclip"></i>
-                                        </td>
-                                        <td>
-                                            6 march
-                                        </td>
-                                    </tr>
-                                    <tr class="unread">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Twitter
-                                        </td>
-                                        <td>
-                                            Nullam quis risus eget urna mollis ornare vel eu leo
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            6 march
-                                        </td>
-                                    </tr>
-                                    <tr class="unread">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Themeforest
-                                        </td>
-                                        <td>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            6 march
-                                        </td>
-                                    </tr>
-                                    <tr class="read">
-                                        <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></input></span>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-star"></i>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            Themeforest
-                                        </td>
-                                        <td>
-                                            Nullam quis risus eget urna mollis ornare vel eu leo
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            6 march
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            </div>
-                        </div>
+                    <div class="row">
                     </div><!-- Row -->
                 </div><!-- Main Wrapper -->
                 <div class="page-footer">
@@ -901,7 +570,6 @@
             </ul>
         </nav>
         <div class="cd-overlay"></div>
-	
 
         <!-- Javascripts -->
         <script src="assets/plugins/jquery/jquery-2.1.4.min.js"></script>
@@ -917,8 +585,5 @@
         <script src="assets/plugins/waves/waves.min.js"></script>
         <script src="assets/plugins/3d-bold-navigation/js/main.js"></script>
         <script src="assets/js/modern.min.js"></script>
-        <script src="assets/js/pages/inbox-alt.js"></script>
-        
     </body>
-
 </html>
