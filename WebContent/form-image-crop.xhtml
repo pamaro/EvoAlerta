@@ -2,10 +2,10 @@
           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-    <head>
+<head>
         
         <!-- Title -->
-        <title>Modern | Charts - Morris Charts</title>
+        <title>Modern | Forms - Image Crop</title>
         
         <meta content="width=device-width, initial-scale=1" name="viewport"></meta>
         <meta charset="UTF-8"></meta>
@@ -19,13 +19,13 @@
         <link href="assets/plugins/uniform/css/uniform.default.min.css" rel="stylesheet"></link>
         <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
         <link href="assets/plugins/fontawesome/css/font-awesome.css" rel="stylesheet" type="text/css"></link>
-        <link href="assets/plugins/line-icons/simple-line-icons.css" rel="stylesheet" type="text/css"></link>
+        <link href="assets/plugins/line-icons/simple-line-icons.css" rel="stylesheet" type="text/css"></link>	
         <link href="assets/plugins/offcanvasmenueffects/css/menu_cornerbox.css" rel="stylesheet" type="text/css"></link>	
         <link href="assets/plugins/waves/waves.min.css" rel="stylesheet" type="text/css"></link>
         <link href="assets/plugins/switchery/switchery.min.css" rel="stylesheet" type="text/css"></link>
         <link href="assets/plugins/3d-bold-navigation/css/style.css" rel="stylesheet" type="text/css"></link>	
         <link href="assets/plugins/slidepushmenus/css/component.css" rel="stylesheet" type="text/css"></link>
-        <link href="assets/plugins/morris/morris.css" rel="stylesheet" type="text/css"></link>
+        <link href="assets/plugins/image-cropper/cropper.min.css" rel="stylesheet" type="text/css"></link>
          
         <!-- Theme Styles -->
         <link href="assets/css/modern.min.css" rel="stylesheet" type="text/css"></link>
@@ -136,7 +136,7 @@
                         </a>
                     </div>
                     <div class="logo-box">
-                        <a href="index.xhtml" class="logo-text"><span>Modern</span></a>
+                        <a href="index.html" class="logo-text"><span>Modern</span></a>
                     </div><!-- Logo Box -->
                     <div class="search-button">
                         <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
@@ -371,7 +371,7 @@
                     </div>
                     <ul class="menu accordion-menu">
                         
-                        <li><a href="index.xhtml" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-home"></span><p>Dashboard</p></a></li>
+                        <li><a href="index.html" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-home"></span><p>Dashboard</p></a></li>
                         <li><a href="profile.html" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-user"></span><p>Profile</p></a></li>
                         <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-envelope"></span><p>Mailbox</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
@@ -422,22 +422,22 @@
                                 <li><a href="table-data.html">Data Tables</a></li>
                             </ul>
                         </li>
-                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-edit"></span><p>Forms</p><span class="arrow"></span></a>
+                        <li class="droplink active open"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-edit"></span><p>Forms</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="form-elements.html">Form Elements</a></li>
                                 <li><a href="form-wizard.html">Form Wizard</a></li>
                                 <li><a href="form-upload.html">File Upload</a></li>
-                                <li><a href="form-image-crop.html">Image Crop</a></li>
+                                <li class="active"><a href="form-image-crop.html">Image Crop</a></li>
                                 <li><a href="form-image-zoom.html">Image Zoom</a></li>
                                 <li><a href="form-select2.html">Select2</a></li>
                                 <li><a href="form-x-editable.html">X-editable</a></li>
                             </ul>
                         </li>
-                        <li class="droplink active open"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-stats"></span><p>Charts</p><span class="arrow"></span></a>
+                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-stats"></span><p>Charts</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="charts-sparkline.html">Sparkline</a></li>
                                 <li><a href="charts-rickshaw.html">Rickshaw</a></li>
-                                <li class="active"><a href="charts-morris.html">Morris</a></li>
+                                <li><a href="charts-morris.html">Morris</a></li>
                                 <li><a href="charts-flotchart.html">Flotchart</a></li>
                                 <li><a href="charts-chartjs.html">Chart.js</a></li>
                             </ul>
@@ -495,12 +495,12 @@
             </div><!-- Page Sidebar -->
             <div class="page-inner">
                 <div class="page-title">
-                    <h3>Morris Charts</h3>
+                    <h3>Image Crop</h3>
                     <div class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li><a href="index.xhtml">Home</a></li>
-                            <li><a href="#">Charts</a></li>
-                            <li class="active">Morris Charts</li>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Forms</a></li>
+                            <li class="active">Image Crop</li>
                         </ol>
                     </div>
                 </div>
@@ -508,52 +508,35 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-white">
-                                <div class="panel-body">
-                                    <p class="no-s">Making good-looking graphs shouldn't be hard. Morris.js is a lightweight library that uses jQuery and Raphaël to make drawing simple charts easy.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- Row -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="panel panel-white">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Area Chart</h3>
+                                <div class="panel-heading clearfix">
+                                    <h3 class="panel-title">Image Cropper</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <div id="morris1"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="panel panel-white">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Bar Chart</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div id="morris2"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- Row -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="panel panel-white">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Line Chart</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div id="morris3"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="panel panel-white">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Donut Chart</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div id="morris4"></div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="image-crop">
+                                                <img src="assets/images/crop.jpg" style="width: 100%; height: 100%;" alt=""></img>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h4>Image Preview:</h4>
+                                            <div class="img-preview"></div>
+                                            <div class="m-t-md">
+                                                <button class="btn btn-primary" id="zoomIn">Zoom In</button>
+                                                <button class="btn btn-primary" id="zoomOut">Zoom Out</button>
+                                                <button class="btn btn-primary" id="rotateLeft">Rotate Left</button>
+                                                <button class="btn btn-primary" id="rotateRight">Rotate Right</button>
+                                                <button class="btn btn-primary" id="clear">Clear</button>
+                                                <p class="text-danger m-t-sm">Note: Be sure the browser supports canvas before call Rotate method.</p>
+                                                <div class="input-group m-t-sm">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-primary" id="replace" type="button">Replace</button>
+                                                    </span>
+                                                    <input class="form-control" id="replaceWith" type="text" value="assets/images/crop.jpg" placeholder="Input image URL"></input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -636,10 +619,10 @@
         <script src="assets/plugins/offcanvasmenueffects/js/main.js"></script>
         <script src="assets/plugins/waves/waves.min.js"></script>
         <script src="assets/plugins/3d-bold-navigation/js/main.js"></script>
-        <script src="assets/plugins/morris/raphael.min.js"></script>
-        <script src="assets/plugins/morris/morris.min.js"></script>
+        <script src="assets/plugins/image-cropper/cropper.min.js"></script>
         <script src="assets/js/modern.min.js"></script>
-        <script src="assets/js/pages/charts-morris.js"></script>
+        <script src="assets/js/pages/form-image-crop.js"></script>
         
     </body>
+      
 </html>
