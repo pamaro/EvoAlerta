@@ -17,9 +17,11 @@ import jutilbr.java.util.formata.Formata;
 import jutilbr.java.util.seguranca.Seguranca;
 /**
  *
- * @author p719653
+ * @author p719653ajdaklsdjlakjdlak
  */
-public class FND_PessoasDao {
+public class FND_PessoasDao {]
+		
+		
 
     private static String INSERT_FND_PESSOAS = "insert into FND_Pessoas("
             + "nome_completo,nome_primeiro,"
