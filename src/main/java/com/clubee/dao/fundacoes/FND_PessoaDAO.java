@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 
 import com.clubee.modelo.fundacoes.FND_PessoaVO;
 import com.clubee.util.jpa.Transactional;
@@ -21,9 +22,13 @@ public class FND_PessoaDAO implements Serializable {
 	}
 	
 	private FND_PessoaVO porEmail(String email) {
-		return manager.createQuery("select p from FND_PessoaVO p where p.email = :email", FND_PessoaVO.class)
-				.setParameter("email", email)
-				.getSingleResult();
+		try {
+			return manager.createQuery("select p from FND_PessoaVO p where p.email = :email", FND_PessoaVO.class)
+					.setParameter("email", email)
+					.getSingleResult();
+		} catch(NoResultException e) {
+			return null;
+		}
 	}
 	
 	@Transactional
