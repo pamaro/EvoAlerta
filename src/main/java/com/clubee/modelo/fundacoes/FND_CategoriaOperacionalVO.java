@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +24,8 @@ public class FND_CategoriaOperacionalVO implements Serializable {
     private String categoria_2;
     private String categoria_3;
     
+    @ManyToOne
+    @JoinColumn(name = "empresa_id")
     private FND_EmpresaVO empresa;
   
     //private static final Logger LOG = LoggerFactory.getLogger(FND_CatOperacionalVO.class.getName());
