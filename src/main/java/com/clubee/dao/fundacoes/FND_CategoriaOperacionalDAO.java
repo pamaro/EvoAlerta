@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
 import com.clubee.modelo.fundacoes.FND_CategoriaOperacionalVO;
 import com.clubee.util.jpa.Transactional;
 
-public class FND_CatOperacionalDAO implements Serializable {
+public class FND_CategoriaOperacionalDAO implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
