@@ -2,10 +2,13 @@ package com.clubee.modelo.ativos;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,13 +21,22 @@ public class AST_ModeloVO implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer requestID;
 	
+	@Column(length = 180)
 	private String nome;
+	
+	@Column(columnDefinition = "text")
 	private String descricao;
 	
+	@ManyToOne
+	@JoinColumn(name = "marca_id")
 	private AST_MarcaVO marca;
 	
+	@ManyToOne
+	@JoinColumn(name = "modelo_id")
 	private AST_ModeloVO modelo;
 	
+	@ManyToOne
+	@JoinColumn(name = "fabricante_id")
 	private AST_FabricanteVO fabricante;
 
 	public Integer getRequestID() {
