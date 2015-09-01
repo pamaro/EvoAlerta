@@ -7,7 +7,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.clubee.dao.fnd.FND_PessoaDAO;
+import com.clubee.dao.fundacoes.FND_PessoaDAO;
 import com.clubee.util.jpa.FacesUtil;
 
 @Named
