@@ -25,13 +25,13 @@ public class FND_EmpresaVO implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer requestID;
-	
+
 	@Column(name = "nome_empresa", length = 150)
 	private String nomeEmpresa;
-	
+
 	@Column(length = 20)
 	private String cnpj;
-	
+
 	@Column(length = 100, unique = true)
 	private String email;
 
@@ -47,9 +47,16 @@ public class FND_EmpresaVO implements Serializable {
 	private List<FND_PessoaVO> pessoas = new ArrayList<>();
 
 	@ManyToMany
-	@JoinTable(name = "relacao_empresa_tipo_empresa", joinColumns = @JoinColumn(name = "empresa_id"), 
-		inverseJoinColumns = @JoinColumn(name = "tipo_id"))
+	@JoinTable(name = "relacao_empresa_tipo_empresa", joinColumns = @JoinColumn(name = "empresa_id") , inverseJoinColumns = @JoinColumn(name = "tipo_id") )
 	private List<FND_TipoEmpresaVO> tiposEmpresa = new ArrayList<>();
+
+	@OneToMany(mappedBy = "empresa")
+	private List<FND_CategoriaOperacionalVO> categoriasOperacionais = new ArrayList<>();
+	
+	@ManyToMany
+	@JoinTable(name = "relacao_empresa_area", joinColumns = @JoinColumn(name = "empresa_id"),
+			inverseJoinColumns = @JoinColumn(name = "area_id"))
+	private List<FND_Area> areas = new ArrayList<>();
 
 	public Integer getRequestID() {
 		return requestID;
@@ -113,6 +120,30 @@ public class FND_EmpresaVO implements Serializable {
 
 	public void setPessoas(List<FND_PessoaVO> pessoas) {
 		this.pessoas = pessoas;
+	}
+
+	public List<FND_TipoEmpresaVO> getTiposEmpresa() {
+		return tiposEmpresa;
+	}
+
+	public void setTiposEmpresa(List<FND_TipoEmpresaVO> tiposEmpresa) {
+		this.tiposEmpresa = tiposEmpresa;
+	}
+
+	public List<FND_CategoriaOperacionalVO> getCategoriasOperacionais() {
+		return categoriasOperacionais;
+	}
+
+	public void setCategoriasOperacionais(List<FND_CategoriaOperacionalVO> categoriasOperacionais) {
+		this.categoriasOperacionais = categoriasOperacionais;
+	}
+	
+	public List<FND_Area> getAreas() {
+		return areas;
+	}
+
+	public void setAreas(List<FND_Area> areas) {
+		this.areas = areas;
 	}
 
 	@Override

@@ -1,7 +1,9 @@
 package com.clubee.modelo.fundacoes;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
@@ -12,6 +14,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -81,6 +85,11 @@ public class FND_PessoaVO implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "perfil_id")
 	private FND_PerfilVO perfil;
+	
+	@ManyToMany
+	@JoinTable(name = "relacao_pessoa_area",joinColumns = @JoinColumn(name = "pessoa_id"),
+			inverseJoinColumns = @JoinColumn(name = "area_id"))
+	private List<FND_Area> areas = new ArrayList<>();
 
 	public Integer getRequestID() {
 		return requestID;
@@ -216,6 +225,14 @@ public class FND_PessoaVO implements Serializable {
 
 	public void setPerfil(FND_PerfilVO perfil) {
 		this.perfil = perfil;
+	}
+	
+	public List<FND_Area> getAreas() {
+		return areas;
+	}
+
+	public void setAreas(List<FND_Area> areas) {
+		this.areas = areas;
 	}
 
 	@Override
