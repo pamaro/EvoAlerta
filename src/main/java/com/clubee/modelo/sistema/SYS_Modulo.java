@@ -1,24 +1,24 @@
-package com.clubee.modelo.fundacoes;
+package com.clubee.modelo.sistema;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.clubee.modelo.sistema.SYS_Modulo;
+import com.clubee.modelo.fundacoes.FND_PerfilVO;
 
 @Entity
-@Table(name = "FND_Perfil")
-public class FND_PerfilVO implements Serializable {
+@Table(name = "SYS_Modulo")
+public class SYS_Modulo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -26,14 +26,15 @@ public class FND_PerfilVO implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer requestID;
 
-	@OneToOne(mappedBy = "perfil")
-	private FND_PessoaVO pessoa;
+	@Column(length = 180)
+	private String descricao;
 
-	@Enumerated(EnumType.STRING)
-	private StatusPerfil status;
+	@Column(length = 180)
+	private String modulo;
 
-	@ManyToMany(mappedBy = "perfis")
-	private List<SYS_Modulo> modulos = new ArrayList<>();
+	@ManyToMany
+	@JoinTable(name = "permissoes", joinColumns = @JoinColumn(name = "modulo_id") , inverseJoinColumns = @JoinColumn(name = "perfil_id") )
+	private List<FND_PerfilVO> perfis = new ArrayList<>();
 
 	public Integer getRequestID() {
 		return requestID;
@@ -43,28 +44,28 @@ public class FND_PerfilVO implements Serializable {
 		this.requestID = requestID;
 	}
 
-	public FND_PessoaVO getPessoa() {
-		return pessoa;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setPessoa(FND_PessoaVO pessoa) {
-		this.pessoa = pessoa;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
-	public StatusPerfil getStatus() {
-		return status;
+	public String getModulo() {
+		return modulo;
 	}
 
-	public void setStatus(StatusPerfil status) {
-		this.status = status;
+	public void setModulo(String modulo) {
+		this.modulo = modulo;
 	}
 
-	public List<SYS_Modulo> getModulos() {
-		return modulos;
+	public List<FND_PerfilVO> getPerfis() {
+		return perfis;
 	}
 
-	public void setModulos(List<SYS_Modulo> modulos) {
-		this.modulos = modulos;
+	public void setPerfis(List<FND_PerfilVO> perfis) {
+		this.perfis = perfis;
 	}
 
 	@Override
@@ -83,7 +84,7 @@ public class FND_PerfilVO implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		FND_PerfilVO other = (FND_PerfilVO) obj;
+		SYS_Modulo other = (SYS_Modulo) obj;
 		if (requestID == null) {
 			if (other.requestID != null)
 				return false;
