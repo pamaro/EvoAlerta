@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+<h:head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</h:head>
+<h:body>
+	
+	<h:form>
+	<p:messages id="msg" autoUpdate="true"/>
+	
+		<p:outputLabel value="Nome"/>
+		<p:inputText value="#{categoriaEquipamentoVOBean.categoriaEquipamentoVO.nome}"/>
+		
+		<p:outputLabel value="tipos"/>
+		<p:selectManyCheckbox value="#{categoriaEquipamentoVOBean.categoriaEquipamentoVO.tiposEquipamentos}" >
+			
+			<f:selectItems value="#{categoriaEquipamentoVOBean.tipos}" var="tipo" 
+				itemLabel="#{tipo.nome}" itemValue="#{tipo}" />
+		</p:selectManyCheckbox>
+		
+		<p:commandButton value="Salvar" action="#{categoriaEquipamentoVOBean.salvar}" update="@form"/>
+	</h:form>
+
+</h:body>
+</html>
